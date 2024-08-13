@@ -1,0 +1,268 @@
+/* manrope-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/manrope-v15-latin-regular.woff2') format('woff2');
+}
+
+/* manrope-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/manrope-v15-latin-600.woff2') format('woff2');
+}
+
+/* manrope-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/manrope-v15-latin-800.woff2') format('woff2');
+}
+
+:root {
+    --clr-bg: hsl(0, 0%, 5%);
+    --clr-light: hsl(208, 100%, 97%);
+    --clr-accent: hsl(244, 92%, 61%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--clr-light);
+    background-color: var(--clr-bg);
+    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hidden-play {
+    display: none;
+}
+
+.stopwatch-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.stopwatch-wrapper.show {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    animation: popup 0.5s ease-out forwards;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 800;
+    padding: .4em 1em;
+    border-radius: .2em;
+    font-family: inherit;
+    letter-spacing: -.05em;
+    color: var(--clr-light);
+    background-color: var(--clr-accent);
+    border: 2px solid transparent;
+    transition: border 100ms;
+}
+
+.btn:active {
+    border: 2px solid var(--clr-light);
+}
+
+.home-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+main div {
+    display: flex;
+    gap: 1em;
+}
+
+span {
+    font-weight: 800;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+header h1 {
+    font-size: 2em;
+    color: var(--clr-accent);
+}
+
+header p {
+    font-size: .8em;
+    max-width: 60ch;
+    margin-bottom: 2em;
+}
+
+
+.instagram,
+.github {
+    display: block;
+    fill: var(--clr-light);
+    transition: fill .3s;
+    width: 2em;
+}
+
+.instagram:hover {
+    fill: #000;
+}
+
+.github:hover {
+    fill: #000;
+}
+
+.arrow {
+    fill: var(--clr-light);
+    width: 2em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--clr-accent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    height: 3em;
+    border-radius: .2em;
+}
+
+.vl {
+    border-left: 2px solid var(--clr-light);
+    height: 3em;
+}
+
+
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--clr-dark);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--clr-indigo);
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+}
+
+
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.time-picker {
+    display: flex;
+    gap: 1em;
+}
+
+#countdown-hours,
+#countdown-minutes,
+#countdown-seconds {
+    width: 4em;
+    padding: 0.5em;
+    border: 2px solid var(--clr-accent);
+    border-radius: 0.2em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.start-countdown-btn {
+    font-size: 1em;
+    padding: 0.5em 1em;
+}
+
+.quick-select {
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+/* .quick-btn {
+    padding: 0.5em 1em;
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 200ms;
+} */
+
+.btn:hover {
+    background-color: hsl(244, 92%, 71%);
+}
