@@ -150,3 +150,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 playBtn.addEventListener("click", () => showPage("stopwatch"));
 homeBtn.addEventListener("click", () => showPage("home"));
+
+window.addEventListener("load", function () {
+  const loadingScreen = document.getElementById("loading-screen");
+  const content = document.querySelector(".content");
+
+  setTimeout(() => {
+    loadingScreen.style.opacity = "0";
+    content.style.opacity = "1";
+
+    setTimeout(() => {
+      loadingScreen.style.display = "none";
+    }, 800);
+  }, 800);
+});
